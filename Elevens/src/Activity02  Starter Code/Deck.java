@@ -19,8 +19,9 @@ public class Deck {
 	 * The next card to be dealt is at size - 1.
 	 */
 	private int size;
-
-
+        private String[] ranks = {"X", "X", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"};
+        private String[] suits = {"H", "D", "S", "C"};
+        private String[] values = {"X", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "10", "10", "10", "11"};
 	/**
 	 * Creates a new <code>Deck</code> instance.<BR>
 	 * It pairs each element of ranks with each element of suits,
@@ -29,8 +30,19 @@ public class Deck {
 	 * @param suits is an array containing all of the card suits.
 	 * @param values is an array containing all of the card point values.
 	 */
-	public Deck(String[] ranks, String[] suits, int[] values) {
+	public Deck(String[] ranks, String[] suits, int[] values) 
+        {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+            cards = new ArrayList<Card>();
+            for(int i = 0; i < ranks.length; i++)
+            {
+                for(int suit = 0; suit < 4; suit++)
+                {
+                    Card card = new Card(ranks[j], suits[suit], values[j]);
+                    cards.add(card);
+                }
+            }
+            size = cards.size();
 	}
 
 
@@ -38,23 +50,28 @@ public class Deck {
 	 * Determines if this deck is empty (no undealt cards).
 	 * @return true if this deck is empty, false otherwise.
 	 */
-	public boolean isEmpty() {
+	public boolean isEmpty() 
+        {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+            return size == 0;
 	}
 
 	/**
 	 * Accesses the number of undealt cards in this deck.
 	 * @return the number of undealt cards in this deck.
 	 */
-	public int size() {
+	public int size() 
+        {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+            return size;
 	}
 
 	/**
 	 * Randomly permute the given collection of cards
 	 * and reset the size to represent the entire deck.
 	 */
-	public void shuffle() {
+	public void shuffle() 
+        {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
 	}
 
@@ -63,8 +80,19 @@ public class Deck {
 	 * @return the card just dealt, or null if all the cards have been
 	 *         previously dealt.
 	 */
-	public Card deal() {
+	public Card deal() 
+        {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+            if(cards.isEmpty())
+            {
+                return null;
+            }
+            else
+            {
+                Card myCard = cards.get(size);
+                size--;
+                return myCard;
+            }
 	}
 
 	/**

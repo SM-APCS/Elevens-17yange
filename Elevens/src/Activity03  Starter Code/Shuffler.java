@@ -1,6 +1,7 @@
 /**
  * This class provides a convenient way to test shuffling methods.
  */
+import java.util.Random;
 public class Shuffler {
 
 	/**
@@ -14,7 +15,8 @@ public class Shuffler {
 	 * Tests shuffling methods.
 	 * @param args is not used.
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args) 
+        {
 		System.out.println("Results of " + SHUFFLE_COUNT +
 								 " consecutive perfect shuffles:");
 		int[] values1 = {0, 1, 2, 3};
@@ -49,8 +51,20 @@ public class Shuffler {
 	 * the cards in one half with the cards in the other.
 	 * @param values is an array of integers simulating cards to be shuffled.
 	 */
-	public static void perfectShuffle(int[] values) {
+	public static void perfectShuffle(int[] values) 
+        {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
+            int[] value = new int[52];
+            int yeet = 0;
+            int half = values.length / 2;
+            int half2 = values.length / 2 + 1;
+            for(int i = 0; i < half; i+=2)
+            {
+                value[i] = values[yeet];
+                value[i+1] = values[half2];
+                yeet++;
+                half2++;
+            }
 	}
 
 	/**
@@ -64,7 +78,44 @@ public class Shuffler {
 	 * searching for an as-yet-unselected card.
 	 * @param values is an array of integers simulating cards to be shuffled.
 	 */
-	public static void selectionShuffle(int[] values) {
+	public static void selectionShuffle(int[] values) 
+        {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
+            for (int k = values.length - 1; k > 0; k--)
+            {
+                int yoot = (int) (Math.random() * (k + 1));
+                int temp = values[yoot];
+                values[yoot] = values[k];
+                values[k] = temp;
+            }
 	}
 }
+/*
+These are my answers to the questions:
+public static String flip() 
+{
+    Random rand = new Random();
+    int n = random.nextInt(3 - 1 + 1) + 1;
+    if(n == 1 || n == 2)
+    {
+        return "heads";
+    }
+    else
+    {
+        return "tails";
+    }
+}
+
+
+public static void arePermutations()
+{
+    import java.util.Arrays;
+    Arrays.sort(arr1);
+    Arrays.sort(arr2);
+    return Arrays.equals(arr1, arr2);
+}
+
+3, 0, 1, 2
+
+
+*/

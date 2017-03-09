@@ -1,0 +1,15 @@
+Question 1.
+5 of spades and 6 of clubs,5 of clubs and 6 of clubs. That's all
+
+Question 2.
+Yes, in order for the game to continue and for the player to win, the last three cards must be J, Q, and K,
+because if you want to find a pair of cards that adds up to 11, the last one will be the odd one out that doesn't
+belong and the player won't be able to clear the board and win the game.
+
+Question 3.
+The game kind of involves strategy, but a lot of it depends on luck of the draw, because sometimes
+you just can't predict what cards will come up next but you can keep track of the cards that have already appeared
+and calculate the probability of the next card being the card that you need. So, it kind of involves skill and it kind
+of just involves the luck of the draw and the randomizer. It does matter which one is chosen because there is 
+always a way to maximize the probability of there being another pair or three of a kind that can be
+cleared the next turn but at some point it just all comes down to luck.
